@@ -1,16 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://do73o4yqlt1ph"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_njpch"]
 [ext_resource type="PackedScene" uid="uid://b32yp15qsmetd" path="res://Nodes/Entry.tscn" id="2_alwbk"]
+[ext_resource type="Script" path="res://preloader.gd" id="2_n2hpu"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_njpch")
+[node name="Main" type="Main"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GraphEdit" type="GraphEdit" parent="."]
 layout_mode = 0
@@ -31,47 +26,49 @@ position_offset = Vector2(12, 26)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 886.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="AddAudio" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Audio +"
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="AddMarker" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Marker +"
 
-[node name="Button3" type="Button" parent="HBoxContainer"]
+[node name="AddSetPlayhead" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Set Playhead +"
 
-[node name="Button4" type="Button" parent="HBoxContainer"]
+[node name="AddScatter" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Scatter +"
 
-[node name="Button5" type="Button" parent="HBoxContainer"]
+[node name="AddMuxer" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Muxer +"
 
-[node name="Button6" type="Button" parent="HBoxContainer"]
+[node name="AddReverb" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Reverb +"
 
-[node name="Button7" type="Button" parent="HBoxContainer"]
+[node name="AddMixer" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Add Mixer +"
 
-[node name="Button8" type="Button" parent="HBoxContainer"]
+[node name="Export" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Export"
 
-[connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
-[connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button7" to="." method="_on_button_7_pressed"]
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+script = ExtResource("2_n2hpu")
+
+[connection signal="pressed" from="HBoxContainer/AddAudio" to="." method="on_pressed" binds= ["Audio"]]
+[connection signal="pressed" from="HBoxContainer/AddMarker" to="." method="on_pressed" binds= ["Marker"]]
+[connection signal="pressed" from="HBoxContainer/AddSetPlayhead" to="." method="on_pressed" binds= ["SetPlayhead"]]
+[connection signal="pressed" from="HBoxContainer/AddScatter" to="." method="on_pressed" binds= ["Scatter"]]
+[connection signal="pressed" from="HBoxContainer/AddMuxer" to="." method="on_pressed" binds= ["Muxer"]]
+[connection signal="pressed" from="HBoxContainer/AddReverb" to="." method="on_pressed" binds= ["Reverb"]]
+[connection signal="pressed" from="HBoxContainer/AddMixer" to="." method="on_pressed" binds= ["Mixer"]]
+[connection signal="pressed" from="HBoxContainer/Export" to="." method="export"]

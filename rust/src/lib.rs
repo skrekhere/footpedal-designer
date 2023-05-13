@@ -1,5 +1,7 @@
 use godot::prelude::*;
 
+mod base;
+
 struct FootPedalDesigner;
 
 #[gdextension]
