@@ -40,7 +40,7 @@ impl NodeVirtual for Main {
 
     fn ready(&mut self) {
         self.node_holder = Some(self.base.get_node_as("ResourcePreloader"));
-        self.graph_edit = Some(self.base.get_node_as("GraphEdit"));
+        self.graph_edit = Some(self.base.get_node_as("VBoxContainer/GraphEdit"));
     }
 }
 

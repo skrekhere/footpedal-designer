@@ -12,36 +12,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hjd3f")
 
-[node name="GraphEdit" type="GraphEdit" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0803457
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -0.064003
-offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-right_disconnects = true
-metadata/_edit_use_anchors_ = true
 
-[node name="GraphNode" parent="GraphEdit" instance=ExtResource("2_alwbk")]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 26.0
-offset_right = 162.0
-offset_bottom = 110.0
-mouse_filter = 1
-position_offset = Vector2(12, 26)
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 48.0
-grow_horizontal = 2
-
-[node name="AddNode" type="MenuButton" parent="HBoxContainer"]
+[node name="AddNodeMenu" type="MenuButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Add Node"
 item_count = 7
@@ -60,53 +42,25 @@ popup/item_5/id = 5
 popup/item_6/text = "Mixer"
 popup/item_6/id = 6
 
-[node name="AddAudio" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Audio +"
-
-[node name="AddMarker" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Marker +"
-
-[node name="AddSetPlayhead" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Set Playhead +"
-
-[node name="AddScatter" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Scatter +"
-
-[node name="AddMuxer" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Muxer +"
-
-[node name="AddReverb" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Reverb +"
-
-[node name="AddMixer" type="Button" parent="HBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Add Mixer +"
-
-[node name="Export" type="Button" parent="HBoxContainer"]
+[node name="Export" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Export"
+
+[node name="GraphEdit" type="GraphEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+right_disconnects = true
+
+[node name="GraphNode" parent="VBoxContainer/GraphEdit" instance=ExtResource("2_alwbk")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 26.0
+offset_right = 162.0
+offset_bottom = 110.0
+mouse_filter = 1
+position_offset = Vector2(12, 26)
 
 [node name="ResourcePreloader" type="ResourcePreloader" parent="."]
 script = ExtResource("2_n2hpu")
 
-[connection signal="pressed" from="HBoxContainer/AddAudio" to="." method="on_pressed" binds= ["Audio"]]
-[connection signal="pressed" from="HBoxContainer/AddMarker" to="." method="on_pressed" binds= ["Marker"]]
-[connection signal="pressed" from="HBoxContainer/AddSetPlayhead" to="." method="on_pressed" binds= ["SetPlayhead"]]
-[connection signal="pressed" from="HBoxContainer/AddScatter" to="." method="on_pressed" binds= ["Scatter"]]
-[connection signal="pressed" from="HBoxContainer/AddMuxer" to="." method="on_pressed" binds= ["Muxer"]]
-[connection signal="pressed" from="HBoxContainer/AddReverb" to="." method="on_pressed" binds= ["Reverb"]]
-[connection signal="pressed" from="HBoxContainer/AddMixer" to="." method="on_pressed" binds= ["Mixer"]]
-[connection signal="pressed" from="HBoxContainer/Export" to="." method="export"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Export" to="." method="export"]
