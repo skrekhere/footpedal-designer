@@ -15,6 +15,8 @@ var node_types : PackedStringArray = [
 
 func _ready() -> void:
 	add_node_menu.get_popup().connect("id_pressed", Callable(self, "add_graph_node"))
+	ready() #cringe workaround, don't have any better ideas rn
 
 func add_graph_node(id) -> void:
 	on_pressed(node_types[id])
+ 
