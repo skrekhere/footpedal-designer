@@ -17,19 +17,15 @@ slot/0/draw_stylebox = true
 script = ExtResource("1_yy540")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "Audio In"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer2"]
-layout_mode = 2
+size_flags_horizontal = 3
 text = "Audio Out"
+horizontal_alignment = 2

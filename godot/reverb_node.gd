@@ -5,8 +5,6 @@ extends GraphNode
 func _ready():
 	set_slot(0, true, Globals.CONNECTOR_AUDIOSTREAM, Globals.CONNECTOR_AUDIOSTREAM_COLOUR, true, Globals.CONNECTOR_AUDIOSTREAM, Globals.CONNECTOR_AUDIOSTREAM_COLOUR)
 
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

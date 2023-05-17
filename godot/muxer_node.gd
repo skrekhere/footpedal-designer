@@ -21,8 +21,8 @@ func _on_resize_request(new_minsize):
 
 
 func _on_button_pressed():
-	var new_playhead = $HBoxContainer/HBoxContainer.duplicate()
-	new_playhead.get_child(0).text = "Audio In " + str(slots)
+	var new_playhead = $HBoxContainer/Label.duplicate()
+	new_playhead.text = "Audio In " + str(slots)
 	add_child(new_playhead)
 	move_child(new_playhead, get_child_count() - 2)
 	set_slot(slots, true, Globals.CONNECTOR_AUDIOSTREAM, Globals.CONNECTOR_AUDIOSTREAM_COLOUR, false, Globals.CONNECTOR_DISABLED, Globals.CONNECTOR_DISABLED_COLOUR)

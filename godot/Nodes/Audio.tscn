@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cya3qi3if21yv"]
+[gd_scene load_steps=2 format=3 uid="uid://cnprwaq7kftlg"]
 
-[ext_resource type="Script" path="res://audio_node.gd" id="1_7ua8m"]
+[ext_resource type="Script" path="res://Nodes/audio_node.gd" id="1_vjei3"]
 
 [node name="GraphNode" type="GraphNode"]
 custom_minimum_size = Vector2(0, 20)
@@ -44,27 +44,21 @@ slot/3/right_type = 0
 slot/3/right_color = Color(1, 1, 1, 1)
 slot/3/right_icon = null
 slot/3/draw_stylebox = true
-script = ExtResource("1_7ua8m")
+script = ExtResource("1_vjei3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Playhead"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 2
-
-[node name="Label2" type="Label" parent="HBoxContainer/HBoxContainer2"]
-layout_mode = 2
 text = "Audio out"
 horizontal_alignment = 2
 
@@ -72,21 +66,14 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer2"]
+[node name="Label2" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 2
-
-[node name="Label2" type="Label" parent="HBoxContainer2/HBoxContainer2"]
-layout_mode = 2
 text = "Started"
 horizontal_alignment = 2
 
@@ -94,21 +81,14 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "End"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer3"]
+[node name="Label2" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 2
-
-[node name="Label2" type="Label" parent="HBoxContainer3/HBoxContainer2"]
-layout_mode = 2
 text = "Ended"
 horizontal_alignment = 2
 

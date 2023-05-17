@@ -25,16 +25,10 @@ slot/1/right_icon = null
 slot/1/draw_stylebox = true
 script = ExtResource("1_rwsd1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "On"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer2"]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 2
 text = "Playhead"
