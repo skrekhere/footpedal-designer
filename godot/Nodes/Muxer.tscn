@@ -28,26 +28,18 @@ script = ExtResource("1_t31oh")
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "Audio In 0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer2"]
-layout_mode = 2
+size_flags_horizontal = 3
 text = "Audio Out"
+horizontal_alignment = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="HBoxContainer2"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 2
 text = "Add Audio In +"
 
-[connection signal="pressed" from="HBoxContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
